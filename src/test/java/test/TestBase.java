@@ -2,6 +2,7 @@ package test;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import drivers.BrowserstackMobileDrivers;
+import drivers.LocalMobileDriver;
 import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
@@ -16,7 +17,8 @@ import static io.qameta.allure.Allure.step;
 public class TestBase {
     @BeforeAll
     public static void setup() {
-        Configuration.browser = BrowserstackMobileDrivers.class.getName();
+      //  Configuration.browser = BrowserstackMobileDrivers.class.getName();
+          Configuration.browser = LocalMobileDriver.class.getName();
         Configuration.browserSize = null;
     }
 
@@ -33,10 +35,10 @@ public class TestBase {
 
         Attach.screenshotAs("Last screenshot");
         Attach.pageSource();
-        Attach.video(sessionId);
+      //  Attach.video(sessionId);
 
         Selenide.closeWebDriver();
-        Attach.video(sessionId);
+      //  Attach.video(sessionId);
 
 
     }

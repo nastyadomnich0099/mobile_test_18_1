@@ -63,11 +63,15 @@ public class AndroidSearchTests extends TestBase{
     @DisplayName("Language settings")
     void settingsTest() {
         step("Open wiki settings tub", () -> {
-            $(AppiumBy.id("org.wikipedia.alpha:id/menu_overflow_button")).click();
-            $(AppiumBy.id("org.wikipedia.alpha:id/explore_overflow_settings")).click();
+            $(AppiumBy.id("org.wikipedia.alpha:id/nav_more_container")).click();
+            $(AppiumBy.id("org.wikipedia.alpha:id/main_drawer_settings_container")).click();
         });
         step("Click on Wikipedia language settings", () -> {
             $(AppiumBy.id("android:id/title")).click();
+        //    $(AppiumBy.linkText("Wikipedia languages")).click();
+            $(AppiumBy.id("org.wikipedia.alpha:id/wiki_language_title")).click();
+
+
         });
         step("Search for Deutsch language", () -> {
             $(AppiumBy.id("org.wikipedia.alpha:id/preference_languages_filter")).sendKeys("Deutsch");
