@@ -10,7 +10,9 @@ import org.aeonbits.owner.Config;
 public interface DeviceConfig extends Config {
 
     String deviceName();
+
     String platformVersion();
+
     String remoteDriver();
 
 }

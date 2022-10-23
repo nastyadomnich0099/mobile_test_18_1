@@ -20,6 +20,7 @@ import static org.apache.commons.io.FileUtils.copyInputStreamToFile;
 
 public class RealMobileDriver implements WebDriverProvider {
     static final RealMobileConfig config = ConfigFactory.create(RealMobileConfig.class, System.getProperties());
+
     public static URL getAppiumServerUrl() {
         try {
             return new URL(config.appiumURL());

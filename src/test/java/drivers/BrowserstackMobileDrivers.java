@@ -1,7 +1,6 @@
 package drivers;
 
 
-
 import com.codeborne.selenide.WebDriverProvider;
 import config.CredConfig;
 import org.aeonbits.owner.ConfigFactory;
@@ -13,7 +12,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class BrowserstackMobileDrivers implements WebDriverProvider{
+public class BrowserstackMobileDrivers implements WebDriverProvider {
     @Override
     public WebDriver createDriver(Capabilities capabilities) {
 
