@@ -30,6 +30,7 @@ public class TestBase {
         addListener("AllureSelenide", new AllureSelenide());
 
         open();
+        $(AppiumBy.id("org.wikipedia.alpha:id/fragment_onboarding_skip_button")).click();
     }
 
     @AfterEach

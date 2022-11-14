@@ -20,7 +20,6 @@ public class AndroidSearchTests extends TestBase {
     @DisplayName("Mobile search test for Wikipedia")
     void searchTest() {
         step("Type search", () -> {
-            $(AppiumBy.id("org.wikipedia.alpha:id/fragment_onboarding_skip_button")).click();
             $(AppiumBy.accessibilityId("Search Wikipedia")).click();
             $(AppiumBy.id("org.wikipedia.alpha:id/search_src_text"))
                     .sendKeys("Video");
@@ -36,7 +35,6 @@ public class AndroidSearchTests extends TestBase {
     @DisplayName("First NFTY search result")
     void LetterSearch() {
         step("NFTY type search", () -> {
-            $(AppiumBy.id("org.wikipedia.alpha:id/fragment_onboarding_skip_button")).click();
             $(AppiumBy.id("org.wikipedia.alpha:id/search_container")).click();
             $(AppiumBy.id("org.wikipedia.alpha:id/search_src_text")).sendKeys("NFTY");
         });
@@ -51,7 +49,6 @@ public class AndroidSearchTests extends TestBase {
     @DisplayName("Hide this card feature")
     void hideThisCard() {
         step("Click on article settings", () -> {
-            $(AppiumBy.id("org.wikipedia.alpha:id/fragment_onboarding_skip_button")).click();
             $(AppiumBy.id("org.wikipedia.alpha:id/view_list_card_header_menu")).click();
         });
         step("Check possibility to hide the selected article", () -> {
@@ -66,15 +63,14 @@ public class AndroidSearchTests extends TestBase {
     @DisplayName("Language settings")
     void settingsTest() {
         step("Open wiki settings tub", () -> {
-            $(AppiumBy.id("org.wikipedia.alpha:id/fragment_onboarding_skip_button")).click();
             $(AppiumBy.id("org.wikipedia.alpha:id/nav_more_container")).click();
             $(AppiumBy.id("org.wikipedia.alpha:id/main_drawer_settings_container")).click();
         });
         step("Click on Wikipedia language settings", () -> {
-            $(AppiumBy.id("android:id/title")).click();
-            //валится когда пытается кликнуть на "Wikipedia languages"
-                $(AppiumBy.linkText("Wikipedia languages")).click();
-          //  $(AppiumBy.id("org.wikipedia.alpha:id/wiki_language_title")).click();
+        //    $(AppiumBy.id("android:id/title")).click();
+
+               $(AppiumBy.linkText("Wikipedia languages")).click();
+         //   $(AppiumBy.id("org.wikipedia.alpha:id/wiki_language_title")).click();
         });
         step("Search for Deutsch language", () -> {
             $(AppiumBy.id("org.wikipedia.alpha:id/preference_languages_filter")).sendKeys("Deutsch");
